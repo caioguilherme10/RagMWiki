@@ -1,11 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Paper from '@material-ui/core/Paper';
 import { withStyles } from '@material-ui/core/styles';
-import TipoA from './tipoA';
-import TipoB from './tipoB';
-import Acolyte from './iacolyte';
-import Priest from './ipriest';
-import HighPriest from './ihighpriest';
+import Grid from '@material-ui/core/Grid';
+import Typography from '@material-ui/core/Typography';
 
 const styles = theme => ({
   root: {
@@ -21,22 +19,22 @@ const styles = theme => ({
   },
 });
 
+const message = `priest `;
 
 function AutoGridNoWrap(props) {
-  const { classes ,name } = props;
-  const tipoA = 'tipoA'
-  const tipoB = 'tipoB'
-  const acolyte = 'acolyte'
-  const priest = 'priest'
-  const highpriest = 'highpriest'
+  const { classes } = props;
 
   return (
     <div className={classes.root}>
-        {name===tipoA && <TipoA/>}
-        {name===tipoB && <TipoB/>}
-        {name===acolyte && <Acolyte/>}
-        {name===priest && <Priest/>}
-        {name===highpriest && <HighPriest/>}
+        
+                <Paper className={classes.paper}>
+                    <Grid container wrap="nowrap" spacing={16}>
+                        <Grid item xs>
+                            <Typography>{message}</Typography>
+                        </Grid>
+                    </Grid>
+                </Paper>
+
     </div>
   );
 }

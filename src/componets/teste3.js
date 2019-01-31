@@ -44,9 +44,9 @@ class NestedList extends React.Component {
   }
 
   handleClickAcolyte = () => {
-    const tipoB = 'tipoB'
+    const acolyte = 'acolyte'
     this.setState(state => ({ acolyte: !state.acolyte}));
-    this.props.handleClickButton(tipoB);
+    this.props.handleClickButton(acolyte);
   }
 
   handleClickMagician = () => {
@@ -83,6 +83,8 @@ class NestedList extends React.Component {
     const { classes } = this.props;
     const tipoA = 'tipoA'
     const tipoB = 'tipoB'
+    const priest = 'priest'
+    const highpriest = 'highpriest'
 
     return (
       <List
@@ -105,10 +107,10 @@ class NestedList extends React.Component {
             </ListItem>
             <Collapse in={this.state.acolyte} timeout="auto" unmountOnExit>
               <ListItem button className={classes.nested1}>
-                <ListItemText inset primary="Priest" onClick={() => this.props.handleClickButton(tipoA)}/>
+                <ListItemText inset primary="Priest" onClick={() => this.props.handleClickButton(priest)}/>
               </ListItem>
               <ListItem button className={classes.nested1}>
-                <ListItemText inset primary="High Priest" onClick={() => this.props.handleClickButton(tipoA)}/>
+                <ListItemText inset primary="High Priest" onClick={() => this.props.handleClickButton(highpriest)}/>
               </ListItem>
               <ListItem button className={classes.nested1}>
                 <ListItemText inset primary="Monk" onClick={() => this.props.handleClickButton(tipoA)}/>
